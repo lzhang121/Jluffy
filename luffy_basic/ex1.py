@@ -17,7 +17,8 @@ from decimal import Decimal
 def is_leap(year):
     if year != int(year):
         sys.exit(-1)
-    if (year / 400 == year // 400) or ((year / 4 == year // 4) and (year / 100 != year // 100)):
+    # if (year / 400 == year // 400) or ((year / 4 == year // 4) and (year / 100 != year // 100)):
+    if year % 400 == 0 or (year % 4 == 0 and year % 100 != 0):
         print("{} is leap".format(year))
     else:
         print("{} not is leap".format(year))
