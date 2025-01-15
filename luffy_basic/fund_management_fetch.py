@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+@Name:        fund_management_fetch.py
+@Describe:    XXX
+@Time:        2025/01/16 00:38:38
+@Author:      Ray
+@Version:     1.0
+"""
 import re
 import sys
 import json
