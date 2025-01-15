@@ -43,7 +43,8 @@ def main():
 
     nested_data = [[85, 90, 78], [76, 82, 88], [
         90, 92, 861, 168, 72, 80], [92, 88, 90]]
-    flattened_data = [statistics.mean(sublist) for sublist in nested_data]
+    flattened_data = ["{:.1f}".format(statistics.mean(sublist))
+                      for sublist in nested_data]
     print(flattened_data)
 
     flat_list = [i for sublist in nested_data for i in sublist]
