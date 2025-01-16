@@ -48,7 +48,7 @@ def save_to_file(data, filename):
 def main():
     URL = 'http://yuanchuang.caijing.com.cn/'
     CLASS_NAME = 'list'
-    OUTPUT_FILE = 'luffy_basic/files/output.txt'
+    OUTPUT_FILE = './luffy_basic/outputs/output.txt'
     html = fetch_page(URL)
     if html:
         titles = parse_html(html, CLASS_NAME)

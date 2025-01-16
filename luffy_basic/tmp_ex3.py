@@ -11,9 +11,9 @@ import os
 
 
 def main():
-    wages_path = 'salary.xlsx'  # 工资表文件路径
+    wages_path = './luffy_basic/inputs/salary.xlsx'  # 工资表文件路径
     df = pd.read_excel(wages_path)
-    save_dir = './luffy_basic/files'
+    save_dir = './luffy_basic/outputs'
 
     # 如果目录不存在，则创建它
     os.makedirs(save_dir, exist_ok=True)  # 使用exist_ok参数简化目录创建

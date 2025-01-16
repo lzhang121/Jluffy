@@ -52,8 +52,8 @@ def main():
         'date': '20240911'
         # 可以添加更多的替换对
     }
-    file_path = 'luffy_basic/files/t.txt'
-    out_path = 'luffy_basic/files/report.txt'
+    file_path = 'luffy_basic/inputs/t.txt'
+    out_path = 'luffy_basic/outputs/report.txt'
     exchange(file_path, replacements, out_path)
 
 

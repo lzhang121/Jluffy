@@ -132,8 +132,8 @@ async def translate_text(text):
 
 
 def translate_result_file():
-    input_file = "output.xlsx"
-    output_file = "output_jp.xlsx"
+    input_file = "./luffy_basic/outputs/output.xlsx"
+    output_file = "./luffy_basic/outputs/output_jp.xlsx"
     wb = openpyxl.load_workbook(input_file)
     sheet = wb.active  # 获取活动工作表
     # 指定需要翻译的列（可以按列名或索引）
@@ -250,7 +250,7 @@ async def async_fetchs(fioriid, appname, urls):
 
 
 if __name__ == "__main__":
-    module_info_file = "result.json"
+    module_info_file = "./luffy_basic/inputs/result.json"
     generate_module_info(module_info_file)
 
     # 同步处理，效率低，大概28分钟
