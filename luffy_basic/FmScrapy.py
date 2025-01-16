@@ -180,7 +180,7 @@ def fetch_url():
         'S29OP': 'S / 4HANA 2023 FPS02',
         'S29PCE': 'S / 4HANA 2023 FPS02 - PCE'}
     # 生成xlsx文件
-    with open('result.json', 'r') as file:
+    with open('./luffy_basic/inputs/result.json', 'r') as file:
         data = json.load(file)
     # 这里假设你的JSON数据是一个列表，里面包含多个字典
     foriids = [item.get('fioriId') for item in data['d']['results']]
