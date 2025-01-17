@@ -132,8 +132,8 @@ async def translate_text(text):
 
 
 def translate_result_file():
-    input_file = "./luffy_basic/outputs/output.xlsx"
-    output_file = "./luffy_basic/outputs/output_jp.xlsx"
+    input_file = "./work_scene/outputs/output.xlsx"
+    output_file = "./work_scene/outputs/output_jp.xlsx"
     wb = openpyxl.load_workbook(input_file)
     sheet = wb.active  # 获取活动工作表
     # 指定需要翻译的列（可以按列名或索引）
@@ -180,7 +180,7 @@ def fetch_url():
         'S29OP': 'S / 4HANA 2023 FPS02',
         'S29PCE': 'S / 4HANA 2023 FPS02 - PCE'}
     # 生成xlsx文件
-    with open('./luffy_basic/inputs/result.json', 'r') as file:
+    with open('./work_scene/inputs/result.json', 'r') as file:
         data = json.load(file)
     # 这里假设你的JSON数据是一个列表，里面包含多个字典
     foriids = [item.get('fioriId') for item in data['d']['results']]
@@ -250,34 +250,34 @@ async def async_fetchs(fioriid, appname, urls):
 
 
 if __name__ == "__main__":
-    module_info_file = "./luffy_basic/inputs/result.json"
-    generate_module_info(module_info_file)
+    module_info_file = "./work_scene/inputs/result.json"
+    # generate_module_info(module_info_file)
 
     # 同步处理，效率低，大概28分钟
     # generate_xlsx_file(module_info_file)
 
     # 异步处理，效率高，1.5分钟
-    # start_time = time.time()
-    # fioriid_appname, urls = fetch_url()
-    # fioriid_appname_urls = []
-    # fioriids = list(fioriid_appname.keys())
-    # for fioriId, url in urls.items():
-    #     fioriid_appname_url = (fioriId, fioriid_appname[fioriId], url)
-    #     fioriid_appname_urls.append(fioriid_appname_url)
-    # selected_items = []
-    # for item in fioriid_appname_urls:
-    #     fioriid = item[0]
-    #     appname = item[1]
-    #     url = item[2]
-    #     selected_item = asyncio.run(async_fetchs(fioriid, appname, url))
-    #     selected_items.append(selected_item)
-    #     print("已经处理完第: {}条记录".format(fioriids.index(fioriid) + 1))
-    # # 写入到 Excel 文件
-    # df = pd.DataFrame(selected_items)
-    # df.to_excel('output.xlsx', index=False)
-    # print("数据已写入 output.xlsx 文件！")
-    # end_time = time.time()
-    # print(end_time - start_time)
+    start_time = time.time()
+    fioriid_appname, urls = fetch_url()
+    fioriid_appname_urls = []
+    fioriids = list(fioriid_appname.keys())
+    for fioriId, url in urls.items():
+        fioriid_appname_url = (fioriId, fioriid_appname[fioriId], url)
+        fioriid_appname_urls.append(fioriid_appname_url)
+    selected_items = []
+    for item in fioriid_appname_urls:
+        fioriid = item[0]
+        appname = item[1]
+        url = item[2]
+        selected_item = asyncio.run(async_fetchs(fioriid, appname, url))
+        selected_items.append(selected_item)
+        print("已经处理完第: {}条记录".format(fioriids.index(fioriid) + 1))
+    # 写入到 Excel 文件
+    df = pd.DataFrame(selected_items)
+    df.to_excel('output.xlsx', index=False)
+    print("数据已写入 output.xlsx 文件！")
+    end_time = time.time()
+    print(end_time - start_time)
 
     # 翻译成日语
-    translate_result_file()
+    # translate_result_file()
