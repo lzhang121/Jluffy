@@ -28,7 +28,7 @@ def main():
                 print(key)
                 break
         if flag:
-            print("その他の機能")
+            print("その他")
 
     print(len(list_1))
 
