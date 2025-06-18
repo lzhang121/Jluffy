@@ -1,0 +1,5 @@
+Collecting pydyf
+  Using cached pydyf-0.11.0-py3-none-any.whl.metadata (2.5 kB)
+Using cached pydyf-0.11.0-py3-none-any.whl (8.1 kB)
+Installing collected packages: pydyf
+Successfully installed pydyf-0.11.0

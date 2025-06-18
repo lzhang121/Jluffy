@@ -1,0 +1,24 @@
+请求堆栈
+
+        今日技巧：
+             -- 往前捣一步，看得更清
+             -- 请求堆栈核心价值：入口定位
+             -- XHR断点
+
+
+练习案例1:
+https://www.xiniudata.com/industry/newest?from=data
+https://www.xiniudata.com/api2/service/x_service/person_industry_list/list_industries_by_sort
+
+练习案例2:
+https://passport.mygjp.com.cn/
+
+预习一下8期的webpack和案例
+
+webpack上课案例：
+（1）蜂鸟竞技（主要）
+     -- https://www.fnscore.cn/score.html
+     -- https://www.fnscore.cn/api/score/getListByDate
+（2）得物（坑）：
+    -- https://www.dewu.com
+    -- https://app.dewu.com/api/v1/h5/commodity-pick-interfaces/pc/pick-rule-result/feeds/info
